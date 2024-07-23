@@ -173,13 +173,20 @@ class CommentCreateView(generics.ListCreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    search_fields = ['comment', 'author__username']
+    filterset_fields = ['author__username']
+    ordering_fields = ['id', 'comment', 'author__username', 'task__title', '-id', '-comment', '-author__username',
+                       'task__title']
 
     def get_queryset(self):
         """
         Restrict the returned comments to the current task.
         """
         task_id = self.kwargs.get('task_id')
-        return Comment.objects.filter(task_id=task_id)
+        queryset = Comment.objects.filter(task_id=task_id)
+        queryset = self.filter_queryset(queryset)
+        return queryset
 
     def post(self, request, *args, **kwargs):
         """
