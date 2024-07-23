@@ -1,0 +1,9 @@
+TASK_LIST_CREATED = 'Task-List Created successfully'
+TASK_LIST_UPDATED = 'Task-List Updated successfully'
+TASK_LIST_DELETED = 'Task-List Deleted successfully'
+TASK_CREATED = 'Task Created successfully'
+TASK_UPDATED = 'Task Updated successfully'
+TASK_DELETED = 'Task Deleted successfully'
+DUE_DATE_VALIDATION = "Due date must be greater than the created date."
+TASK_ASSIGNED = 'Task Assigned successfully'
+COMMENT_ADDED = 'Comment Added successfully'

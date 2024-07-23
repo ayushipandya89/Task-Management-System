@@ -1,0 +1,5 @@
+USER_CREATED = "User Registered successfully"
+INVALID_CREDENTIALS = "Invalid credentials"
+LOGIN_SUCCESS = "Login successful"
+NO_USER_FOUND = "User with this email does not exist."
+PASSWORD_RESET_SUCCESSFULLY = "Password reset link sent to your email."
